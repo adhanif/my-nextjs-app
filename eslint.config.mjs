@@ -9,14 +9,13 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// const eslintConfig = [...compat.extends("next/core-web-vitals", "prettier")];
-const eslintConfig = [
+export default [
   ...compat.config({
     extends: ["next/core-web-vitals", "prettier"],
     rules: {
       semi: ["error", "always"],
       "no-unused-vars": "error",
-      "import/no-unresolved": "error", // Ensure imports are resolved correctly
+      "import/no-unresolved": "error",
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -28,7 +27,16 @@ const eslintConfig = [
         },
       ],
     },
+    settings: {
+      "import/resolver": {
+        alias: {
+          map: [["@", "./src"]],
+          extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+        },
+        node: {
+          extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+        },
+      },
+    },
   }),
 ];
-
-export default eslintConfig;

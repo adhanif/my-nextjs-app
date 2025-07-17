@@ -1,6 +1,6 @@
-import { Counter, PostsList, PostsListSkeleton } from "@/components";
-
 import { Suspense } from "react";
+
+import { Counter, PostsList, PostsListSkeleton } from "@/components";
 
 import { getPosts } from "@/data/posts";
 
