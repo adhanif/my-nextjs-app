@@ -18,6 +18,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
     "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-alias": "^1.1.2",
     "tailwindcss": "^4"
   }
 }
